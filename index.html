@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mọi Thứ Ở Đây</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      background-color: #f5f5f5;
+      overflow-y: auto;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    .footer-button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #444;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .footer-button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    MỌI THỨ Ở ĐÂY
+  </header>
+
+  <main id="main-content">
+    <h2>Trang Chủ</h2>
+    <p>Chào mừng bạn đến với trang HOME!</p>
+  </main>
+
+  <footer>
+    <button class="footer-button" onclick="loadContent('home')">HOME</button>
+    <button class="footer-button" onclick="loadContent('app')">APP</button>
+    <button class="footer-button" onclick="loadContent('share')">SHARE</button>
+  </footer>
+
+  <script>
+    function loadContent(section) {
+      const main = document.getElementById('main-content');
+      if (section === 'home') {
+        main.innerHTML = `
+          <h2>Trang Chủ</h2>
+          <p>Chào mừng bạn đến với trang HOME!</p>
+        `;
+      } else if (section === 'app') {
+        main.innerHTML = `
+          <h2>Ứng Dụng</h2>
+          <p>Thông tin về các ứng dụng sẽ hiển thị ở đây.</p>
+        `;
+      } else if (section === 'share') {
+        main.innerHTML = `
+          <h2>Chia Sẻ</h2>
+          <p>Bạn có thể chia sẻ nội dung tại đây.</p>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
